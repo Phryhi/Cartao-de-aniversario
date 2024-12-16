@@ -1,0 +1,137 @@
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(208, 3, 3);
+}
+.card{
+    width: 40rem;
+    height: 28rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 75rem;
+    perspective: 75rem;
+    transition:1s;
+}
+.card:hover{
+    transform: rotate(-5deg);
+}
+.card:hover .outside{
+    transform: rotateY(-130deg);
+}
+.outside, .inside{
+    height:100%;
+    width:50%;
+    position:absolute;
+    left:50.1%;
+}
+.inside{
+    background: linear-gradient(
+        to right, #e0e0e0, #ffffff 30%
+    );
+    line-height: 1.5;
+    text-align: center;
+    padding:0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left:50%;
+}
+.outside{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition:2s;
+}
+.front, .back{
+    height:100%;
+    width:100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    background-color: #ffffff;
+}
+.front{
+    background-color: #ffffff;
+}
+.back{
+    transform: rotateY(180deg); 
+    background: linear-gradient(to left, #e0e0e0, #ffffff);
+}
+.cake{
+    width: 100%;
+    position:absolute;
+    bottom:2rem;
+}
+.top-layer, .middle-layer, .bottom-layer{
+    height:5.5rem;
+    width: 15rem;
+    background-repeat: repeat;
+    background-size: 3.75rem 6.25rem;
+    background-position: 1.75rem 0;
+    background-image: linear-gradient(
+        transparent 3.125rem, #fedbab, #fedbab,
+        transparent 3.75rem
+    ),
+    radial-gradient(
+        circle at 50% 5px, #994c10 30px, #fcbf29 31px
+    );
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+}
+.middle-layer{
+    transform: scale(0.85);
+    top: 0.464rem;
+}
+.top-layer{
+    transform: scale(0.7);
+    top: 1.725rem;
+}
+.candle{
+    height: 45px;
+    width: 15px;
+    background: linear-gradient(
+        45deg, rgb(255, 9, 9) 0rem, rgb(255, 165, 180) 2rem,pink 2.5rem
+    );
+    position:absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom:223px;
+}
+.candle:before{
+    content:"";
+    position:absolute;
+    height: 16px;
+    width: 16px;
+    background-color: orange;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    transform:rotate(45deg);
+    left: -1px;
+}
+.outside p{
+    font-size: 21px;
+    text-transform: uppercase;
+    margin-top:23px;
+    text-align:center;
+    letter-spacing:6px;
+    color:#000046;
+}
+.inside h1{
+    font-size: 120px;
+    line-height: 120px;
+}
